@@ -33,8 +33,8 @@ NODES=(
 )
 
 CHECKPOINT_MODELS=(
-    "https://civitai.com/api/download/models/361593?type=Model&format=SafeTensor&size=pruned&fp=fp16"
-	"https://civitai.com/api/download/models/297320?type=Model&format=SafeTensor&size=pruned&fp=fp16"
+    "https://civitai.com/api/download/models/361593"
+	"https://civitai.com/api/download/models/354657"
 )
 
 CONTROLNET_MODELS=(
@@ -55,8 +55,7 @@ IPADAPTER_MODELS=(
 )
 
 INSTANTID_MODELS=(
-    "https://huggingface.co/InstantX/InstantID/resolve/main/ip-adapter.bin"
-
+    "https://huggingface.co/InstantX/InstantID/resolve/main/ip-adapter.bin?download=true"
 )
 
 INSIGHTFACE_MODELS=(
@@ -104,10 +103,10 @@ function provisioning_start() {
     provisioning_get_models \
         "${WORKSPACE}/storage/stable_diffusion/models/ipadapter" \
         "${IPADAPTER_MODELS[@]}"
-    provisioning_get_models \
+    provisioning_get_models_with_names \
         "${WORKSPACE}/storage/stable_diffusion/models/instantid" \
         "${INSTANTID_MODELS[@]}"
-    provisioning_get_models \
+    provisioning_get_models_with_names \
         "${WORKSPACE}/storage/stable_diffusion/models/insightface/models" \
         "${INSIGHTFACE_MODELS[@]}"
     provisioning_print_end
@@ -273,44 +272,4 @@ function provisioning_download() {
     fi
 }
 
-function initialize_instantid() {
-    # Navigate to the directory
-    cd /workspace/ComfyUI/models/
-    
-    # Create a directory called instantid
-    mkdir -p instantid
-    
-    # Change into the instantid directory
-    cd instantid
-    
-    # Download the file using wget
-    wget "https://huggingface.co/InstantX/InstantID/resolve/main/ip-adapter.bin?download=true"
-
-    mv ip-adapter.bin?download=true ip-adapter.bin
-}
-
-function initialize_insightface() {
-    # Navigate to the directory
-    cd /workspace/ComfyUI/models/ || exit
-    
-    # Create a directory called insightface
-    mkdir -p insightface
-    
-    # Change into the insightface directory
-    cd insightface || exit
-
-    # Create models directory
-    mkdir -p models
-
-    cd models || exit
-    
-    # Download the file using wget
-    if wget "https://huggingface.co/MonsterMMORPG/tools/resolve/main/antelopev2.zip?download=true"; then
-        # Unzip the file if download is successful
-        unzip antelopev2.zip?download=true
-    else
-        echo "Download failed!"
-        exit 1
-    fi
-}
 provisioning_start
