@@ -37,10 +37,6 @@ CHECKPOINT_MODELS=(
 	"https://civitai.com/api/download/models/354657"
 )
 
-LORA_MODELS=(
-    #"https://civitai.com/api/download/models/16576"
-)
-
 CONTROLNET_MODELS=(
     "https://huggingface.co/InstantX/InstantID/resolve/main/ControlNetModel/diffusion_pytorch_model.safetensors"
 )
