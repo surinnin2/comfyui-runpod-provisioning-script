@@ -33,8 +33,8 @@ NODES=(
 )
 
 CHECKPOINT_MODELS=(
-    "https://civitai.com/api/download/models/361593"
-	"https://civitai.com/api/download/models/354657"
+    "https://civitai.com/api/download/models/361593?type=Model&format=SafeTensor&size=pruned&fp=fp16"
+	"https://civitai.com/api/download/models/297320?type=Model&format=SafeTensor&size=pruned&fp=fp16"
 )
 
 CONTROLNET_MODELS=(
@@ -55,13 +55,16 @@ IPADAPTER_MODELS=(
 )
 
 INSTANTID_MODELS=(
-    "https://huggingface.co/InstantX/InstantID/resolve/main/ip-adapter.bin?download=true"
-    "ip-adapter.bin"
+    "https://huggingface.co/InstantX/InstantID/resolve/main/ip-adapter.bin"
+
 )
 
 INSIGHTFACE_MODELS=(
-    "https://huggingface.co/MonsterMMORPG/tools/resolve/main/antelopev2.zip"
-    "antelopev2.zip"
+    "https://huggingface.co/MonsterMMORPG/tools/resolve/main/1k3d68.onnx"
+    "https://huggingface.co/MonsterMMORPG/tools/resolve/main/2d106det.onnx"
+    "https://huggingface.co/MonsterMMORPG/tools/resolve/main/genderage.onnx"
+    "https://huggingface.co/MonsterMMORPG/tools/resolve/main/glintr100.onnx"
+    "https://huggingface.co/MonsterMMORPG/tools/resolve/main/scrfd_10g_bnkps.onnx"
 )
 
 ### DO NOT EDIT BELOW HERE UNLESS YOU KNOW WHAT YOU ARE DOING ###
@@ -101,10 +104,10 @@ function provisioning_start() {
     provisioning_get_models \
         "${WORKSPACE}/storage/stable_diffusion/models/ipadapter" \
         "${IPADAPTER_MODELS[@]}"
-    provisioning_get_models_with_names \
+    provisioning_get_models \
         "${WORKSPACE}/storage/stable_diffusion/models/instantid" \
         "${INSTANTID_MODELS[@]}"
-    provisioning_get_models_with_names \
+    provisioning_get_models \
         "${WORKSPACE}/storage/stable_diffusion/models/insightface/models" \
         "${INSIGHTFACE_MODELS[@]}"
     provisioning_print_end
