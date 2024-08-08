@@ -324,7 +324,8 @@ function initialize_insightface() {
     else
         echo "Download failed!"
         exit 1
-
+    fi
+}
 provisioning_start
 initialize_instantid
 initialize_insightface
