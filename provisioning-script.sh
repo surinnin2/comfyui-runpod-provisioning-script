@@ -33,8 +33,8 @@ NODES=(
 )
 
 CHECKPOINT_MODELS=(
-    "https://civitai.com/api/download/models/361593"
-	"https://civitai.com/api/download/models/354657"
+    "https://civitai.com/api/download/models/361593?type=Model&format=SafeTensor&size=pruned&fp=fp16"
+	"https://civitai.com/api/download/models/297320?type=Model&format=SafeTensor&size=pruned&fp=fp16"
 )
 
 CONTROLNET_MODELS=(
@@ -91,22 +91,16 @@ function provisioning_start() {
     provisioning_get_models \
         "${WORKSPACE}/storage/stable_diffusion/models/controlnet" \
         "${CONTROLNET_MODELS[@]}"
-    provisioning_get_models \
-        "${WORKSPACE}/storage/stable_diffusion/models/vae" \
-        "${VAE_MODELS[@]}"
-    provisioning_get_models \
-        "${WORKSPACE}/storage/stable_diffusion/models/esrgan" \
-        "${ESRGAN_MODELS[@]}"
-	provisioning_get_models_with_names \
+	provisioning_get_models \
         "${WORKSPACE}/storage/stable_diffusion/models/clip_vision" \
         "${CLIP_VISION_MODELS[@]}"
     provisioning_get_models \
         "${WORKSPACE}/storage/stable_diffusion/models/ipadapter" \
         "${IPADAPTER_MODELS[@]}"
-    provisioning_get_models_with_names \
+    provisioning_get_models \
         "${WORKSPACE}/storage/stable_diffusion/models/instantid" \
         "${INSTANTID_MODELS[@]}"
-    provisioning_get_models_with_names \
+    provisioning_get_models \
         "${WORKSPACE}/storage/stable_diffusion/models/insightface/models" \
         "${INSIGHTFACE_MODELS[@]}"
     provisioning_print_end
