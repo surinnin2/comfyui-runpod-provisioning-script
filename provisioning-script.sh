@@ -56,6 +56,7 @@ IPADAPTER_MODELS=(
 
 INSTANTID_MODELS=(
     "https://huggingface.co/InstantX/InstantID/resolve/main/ip-adapter.bin?download=true"
+    "https://huggingface.co/InstantX/InstantID/resolve/main/ip-adapter.bin"
 )
 
 INSIGHTFACE_MODELS=(
@@ -98,10 +99,10 @@ function provisioning_start() {
         "${WORKSPACE}/storage/stable_diffusion/models/ipadapter" \
         "${IPADAPTER_MODELS[@]}"
     provisioning_get_models \
-        "${WORKSPACE}/storage/stable_diffusion/models/instantid" \
+        "/workspace/ComfyUI/models/instantid" \
         "${INSTANTID_MODELS[@]}"
     provisioning_get_models \
-        "${WORKSPACE}/storage/stable_diffusion/models/insightface/models" \
+        "/workspace/ComfyUI/models/insightface/models" \
         "${INSIGHTFACE_MODELS[@]}"
     provisioning_print_end
 }
