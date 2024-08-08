@@ -15,23 +15,26 @@ APT_PACKAGES=(
 )
 
 PIP_PACKAGES=(
-    #"package-1"
-    #"package-2"
+    "opencv-python==4.7.0.72"
+	"onnx==1.16.1"
+    "onnxruntime==1.18.0"
+    "onnxruntime-gpu==1.18.0"
+    "numba==0.59.1"
+	"insightface"
 )
 
 NODES=(
-    
+    "https://github.com/ltdrdata/ComfyUI-Manager"
+ 	"https://github.com/cubiq/ComfyUI_InstantID"
+	"https://github.com/cubiq/ComfyUI_IPAdapter_plus"
+	"https://github.com/cubiq/ComfyUI_InstantID"
+	"https://github.com/cubiq/ComfyUI_essentials"
+	"https://github.com/cubiq/ComfyUI_FaceAnalysis"
 )
 
 CHECKPOINT_MODELS=(
-    "https://huggingface.co/runwayml/stable-diffusion-v1-5/resolve/main/v1-5-pruned-emaonly.ckpt"
-    #"https://huggingface.co/stabilityai/stable-diffusion-2-1/resolve/main/v2-1_768-ema-pruned.ckpt"
-    "https://huggingface.co/stabilityai/stable-diffusion-xl-base-1.0/resolve/main/sd_xl_base_1.0.safetensors"
-    "https://huggingface.co/stabilityai/stable-diffusion-xl-refiner-1.0/resolve/main/sd_xl_refiner_1.0.safetensors"
-)
-
-UNET_MODELS=(
-
+    "https://civitai.com/api/download/models/361593"
+	"https://civitai.com/api/download/models/354657"
 )
 
 LORA_MODELS=(
@@ -51,26 +54,30 @@ ESRGAN_MODELS=(
 )
 
 CONTROLNET_MODELS=(
-    "https://huggingface.co/lllyasviel/sd_control_collection/resolve/main/diffusers_xl_canny_mid.safetensors"
-    "https://huggingface.co/lllyasviel/sd_control_collection/resolve/main/diffusers_xl_depth_mid.safetensors?download"
-    "https://huggingface.co/lllyasviel/sd_control_collection/resolve/main/t2i-adapter_diffusers_xl_openpose.safetensors"
-    "https://huggingface.co/webui/ControlNet-modules-safetensors/resolve/main/control_canny-fp16.safetensors"
-    #"https://huggingface.co/webui/ControlNet-modules-safetensors/resolve/main/control_depth-fp16.safetensors"
-    "https://huggingface.co/kohya-ss/ControlNet-diff-modules/resolve/main/diff_control_sd15_depth_fp16.safetensors"
-    #"https://huggingface.co/webui/ControlNet-modules-safetensors/resolve/main/control_hed-fp16.safetensors"
-    #"https://huggingface.co/webui/ControlNet-modules-safetensors/resolve/main/control_mlsd-fp16.safetensors"
-    #"https://huggingface.co/webui/ControlNet-modules-safetensors/resolve/main/control_normal-fp16.safetensors"
-    "https://huggingface.co/webui/ControlNet-modules-safetensors/resolve/main/control_openpose-fp16.safetensors"
-    #"https://huggingface.co/webui/ControlNet-modules-safetensors/resolve/main/control_scribble-fp16.safetensors"
-    #"https://huggingface.co/webui/ControlNet-modules-safetensors/resolve/main/control_seg-fp16.safetensors"
-    "https://huggingface.co/webui/ControlNet-modules-safetensors/resolve/main/t2iadapter_canny-fp16.safetensors"
-    #"https://huggingface.co/webui/ControlNet-modules-safetensors/resolve/main/t2iadapter_color-fp16.safetensors"
-    #"https://huggingface.co/webui/ControlNet-modules-safetensors/resolve/main/t2iadapter_depth-fp16.safetensors"
-    #"https://huggingface.co/webui/ControlNet-modules-safetensors/resolve/main/t2iadapter_keypose-fp16.safetensors"
-    "https://huggingface.co/webui/ControlNet-modules-safetensors/resolve/main/t2iadapter_openpose-fp16.safetensors"
-    #"https://huggingface.co/webui/ControlNet-modules-safetensors/resolve/main/t2iadapter_seg-fp16.safetensors"
-    #"https://huggingface.co/webui/ControlNet-modules-safetensors/resolve/main/t2iadapter_sketch-fp16.safetensors"
-    #"https://huggingface.co/webui/ControlNet-modules-safetensors/resolve/main/t2iadapter_style-fp16.safetensors"
+    "https://huggingface.co/InstantX/InstantID/resolve/main/ControlNetModel/diffusion_pytorch_model.safetensors"
+)
+
+CLIP_VISION_MODELS=(
+	"https://huggingface.co/h94/IP-Adapter/resolve/main/models/image_encoder/model.safetensors"
+	"CLIP-ViT-H-14-laion2B-s32B-b79K.safetensors"
+	"https://huggingface.co/h94/IP-Adapter/resolve/main/sdxl_models/image_encoder/model.safetensors"
+	"CLIP-ViT-bigG-14-laion2B-39B-b160k.safetensors"
+)
+
+IPADAPTER_MODELS=(
+    "https://huggingface.co/h94/IP-Adapter-FaceID/resolve/main/ip-adapter-faceid-plusv2_sdxl.bin"
+    "https://huggingface.co/h94/IP-Adapter/resolve/main/sdxl_models/ip-adapter-plus-face_sdxl_vit-h.safetensors"
+    "https://huggingface.co/h94/IP-Adapter/resolve/main/sdxl_models/ip-adapter-plus_sdxl_vit-h.safetensors"
+)
+
+INSTANTID_MODELS=(
+    "https://huggingface.co/InstantX/InstantID/resolve/main/ip-adapter.bin?download=true"
+    "ip-adapter.bin"
+)
+
+INSIGHTFACE_MODELS=(
+    "https://huggingface.co/MonsterMMORPG/tools/resolve/main/antelopev2.zip"
+    "antelopev2.zip"
 )
 
 ### DO NOT EDIT BELOW HERE UNLESS YOU KNOW WHAT YOU ARE DOING ###
@@ -104,6 +111,18 @@ function provisioning_start() {
     provisioning_get_models \
         "${WORKSPACE}/storage/stable_diffusion/models/esrgan" \
         "${ESRGAN_MODELS[@]}"
+	provisioning_get_models_with_names \
+        "${WORKSPACE}/storage/stable_diffusion/models/clip_vision" \
+        "${CLIP_VISION_MODELS[@]}"
+    provisioning_get_models \
+        "${WORKSPACE}/storage/stable_diffusion/models/ipadapter" \
+        "${IPADAPTER_MODELS[@]}"
+    provisioning_get_models_with_names \
+        "${WORKSPACE}/storage/stable_diffusion/models/instantid" \
+        "${INSTANTID_MODELS[@]}"
+    provisioning_get_models_with_names \
+        "${WORKSPACE}/storage/stable_diffusion/models/insightface/models" \
+        "${INSIGHTFACE_MODELS[@]}"
     provisioning_print_end
 }
 
@@ -161,7 +180,6 @@ function provisioning_get_default_workflow() {
 
 function provisioning_get_models() {
     if [[ -z $2 ]]; then return 1; fi
-    
     dir="$1"
     mkdir -p "$dir"
     shift
@@ -171,6 +189,42 @@ function provisioning_get_models() {
         printf "Downloading: %s\n" "${url}"
         provisioning_download "${url}" "${dir}"
         printf "\n"
+    done
+}
+
+function provisioning_get_models_with_names() {
+    if [[ -z $3 ]]; then return 1; fi
+    dir="$1"
+    mkdir -p "$dir"
+    shift
+
+    if [[ $(( $# % 2 )) -ne 0 ]]; then
+        echo "Error: URLs and filenames must be provided in pairs."
+        return 1
+    fi
+
+    if [[ $DISK_GB_ALLOCATED -ge $DISK_GB_REQUIRED ]]; then
+        arr=("$@")
+    else
+        printf "WARNING: Low disk space allocation - Only the first model will be downloaded!\n"
+        arr=("${@:1:2}")
+    fi
+    
+    printf "Downloading %s model(s) to %s...\n" "$(( ${#arr[@]} / 2 ))" "$dir"
+    for ((i = 0; i < ${#arr[@]}; i+=2)); do
+        url="${arr[i]}"
+        filename="${arr[i+1]}"
+        filepath="${dir}/${filename}"
+        printf "Downloading: %s as %s\n" "${url}" "${filename}"
+        provisioning_download "${url}" "${filepath}"
+        printf "\n"
+        
+        # Check if the file is a ZIP file and unzip it
+        if [[ "${filename}" == *.zip ]]; then
+            printf "Unzipping: %s\n" "${filepath}"
+            unzip -o "${filepath}" -d "${dir}"
+            printf "Unzipped: %s\n" "${filepath}"
+        fi
     done
 }
 
@@ -232,4 +286,46 @@ function provisioning_download() {
     fi
 }
 
+function initialize_instantid() {
+    # Navigate to the directory
+    cd /workspace/ComfyUI/models/
+    
+    # Create a directory called instantid
+    mkdir -p instantid
+    
+    # Change into the instantid directory
+    cd instantid
+    
+    # Download the file using wget
+    wget "https://huggingface.co/InstantX/InstantID/resolve/main/ip-adapter.bin?download=true"
+
+    mv ip-adapter.bin?download=true ip-adapter.bin
+}
+
+function initialize_insightface() {
+    # Navigate to the directory
+    cd /workspace/ComfyUI/models/ || exit
+    
+    # Create a directory called insightface
+    mkdir -p insightface
+    
+    # Change into the insightface directory
+    cd insightface || exit
+
+    # Create models directory
+    mkdir -p models
+
+    cd models || exit
+    
+    # Download the file using wget
+    if wget "https://huggingface.co/MonsterMMORPG/tools/resolve/main/antelopev2.zip?download=true"; then
+        # Unzip the file if download is successful
+        unzip antelopev2.zip?download=true
+    else
+        echo "Download failed!"
+        exit 1
+}
+
 provisioning_start
+initialize_instantid
+initialize_insightface
