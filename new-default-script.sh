@@ -15,19 +15,26 @@ APT_PACKAGES=(
 )
 
 PIP_PACKAGES=(
-    #"package-1"
-    #"package-2"
+    "opencv-python==4.7.0.72"
+	"onnx==1.16.1"
+    "onnxruntime==1.18.0"
+    "onnxruntime-gpu==1.18.0"
+    "numba==0.59.1"
+	"insightface"
 )
 
 NODES=(
-    
+    "https://github.com/ltdrdata/ComfyUI-Manager"
+ 	"https://github.com/cubiq/ComfyUI_InstantID"
+	"https://github.com/cubiq/ComfyUI_IPAdapter_plus"
+	"https://github.com/cubiq/ComfyUI_InstantID"
+	"https://github.com/cubiq/ComfyUI_essentials"
+	"https://github.com/cubiq/ComfyUI_FaceAnalysis"
 )
 
 CHECKPOINT_MODELS=(
-    "https://huggingface.co/runwayml/stable-diffusion-v1-5/resolve/main/v1-5-pruned-emaonly.ckpt"
-    #"https://huggingface.co/stabilityai/stable-diffusion-2-1/resolve/main/v2-1_768-ema-pruned.ckpt"
-    "https://huggingface.co/stabilityai/stable-diffusion-xl-base-1.0/resolve/main/sd_xl_base_1.0.safetensors"
-    "https://huggingface.co/stabilityai/stable-diffusion-xl-refiner-1.0/resolve/main/sd_xl_refiner_1.0.safetensors"
+    "https://civitai.com/api/download/models/361593"
+	"https://civitai.com/api/download/models/354657"
 )
 
 UNET_MODELS=(
